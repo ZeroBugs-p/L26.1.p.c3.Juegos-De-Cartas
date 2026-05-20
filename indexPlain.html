@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cartas</title>
+</head>
+<body>
+    <section id ="body">
+        
+        <!-- Nombre de la tabla -->
+        <h2>
+            Gestión de Participantes
+        </h2>
+
+        <!-- Linea de espacio -->
+        <hr>
+
+        <!-- Tabla de valores del arreglo-->
+        <table border="3" style="width: 100%; text-align: center; border-color: blue;"> <!-- Estilo -->
+            <thead> <!-- Encabezado de la tabla -->
+            <tr> <!-- Fila -->
+                <th> <!-- Columna -->
+                    Participante</th>
+                <th>Carta 1</th>
+                <th>Carta 2</th>
+                <th>Carta 3</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <tbody id="body_tbParticipante"></tbody> <!-- Relleno de la tabla -->
+        </table>
+
+        <hr>
+
+        <div>
+            <strong>Cantidad de Participantes:</strong> <span id="body_lblCantidadParticipantes">0</span>
+        </div>
+
+        <div>
+            <strong>Última Puntuación:</strong> <span id="body_lblUltimaPuntuacion">0</span>
+        </div>
+
+        <div>
+            <strong>Nombre del Ganador:</strong> <span id="body_lblNombreMayor">0</span> <!-- span: que lo muestra -->
+        </div>
+
+        <div>
+            <strong>Porcentaje de Jugadores con menos de 10 puntos:</strong> <span id="body_lblPorcentMenos10">0</span>%
+        </div>
+
+        <div><strong>Procesos Usados: Push, length y forEach </strong></div>
+
+        <hr>
+
+        <button id="body_btNewParticipante"><strong>Procesar Participante</strong></button>
+        
+    </section>
+
+    <section id="participante" hidden style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; width: 350px;">
+        
+        <h2 id="participante_lblParticipante">Procesar Participante</h2> <!-- titulo del cuadrito que procesa :D -->
+        
+        <div>
+            <label> Nombre del Participante:
+                <input type="text" id="participante_inNombre" placeholder="Ej: Oswal"> 
+            </label>
+        </div>
+
+        <div>
+            <label> Carta 1:
+                <input type="number" id="participante_inCarta1" placeholder="Ej: 9">
+            </label>
+        </div>
+
+        <div>
+            <label> Carta 2:
+                <input type="number" id="participante_inCarta2" placeholder="Ej: 8">
+            </label>
+        </div>
+
+        <div>
+            <label> Carta 3:
+                <input type="number" id="participante_inCarta3" placeholder="Ej: 7">
+            </label>
+        </div>
+
+        <button id="participante_btCancelar"><strong>Cancelar</strong></button>
+        <button id="participante_btAceptar"><strong>Aceptar</strong></button>
+    
+    </section>
+    
+    <script type="module">
+
+        // Importamos los Controladores
+            import Cl_cJuego from "./dist/controllers/Cl_cJuego.js";
+            import Cl_cParticipante from "./dist/controllers/Cl_cParticipante.js";
+
+        // Importamos las Vistas Plain
+            import Cl_vJuegoPlain from "./dist/views/Cl_vJuegoPlain.js";
+            import Cl_vParticipantePlain from "./dist/views/Cl_vParticipantePlain.js";
+
+        // Instanciamos Las Vistas
+            const vistaJuego = new Cl_vJuegoPlain();
+            const vistaParticipante = new Cl_vParticipantePlain();
+
+        // Inyectamos Las Vistas a los Controladores
+            const controladorParticipante = new Cl_cParticipante(vistaParticipante);
+                new Cl_cJuego(vistaJuego, controladorParticipante);
+
+    </script>
+</body>
+</html>
