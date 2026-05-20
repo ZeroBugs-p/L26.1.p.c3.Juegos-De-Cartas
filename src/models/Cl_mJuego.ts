@@ -6,6 +6,8 @@ export default class Cl_mJuego {
     public participante: Cl_mParticipante[] = [];
     private totalParticipantes: number = 0;
     private cntMenos10: number = 0;
+    // Contador de participantes mayores de 18 años
+    private cntMayores18: number = 0;
 
     agregarParticipante(participante: Cl_mParticipante) {
         this.participante.push(participante);
@@ -14,6 +16,11 @@ export default class Cl_mJuego {
         // Condición
             if (participante.puntuacion() < 10) {
                 this.cntMenos10 ++;
+            }
+
+            if (participante.esMayorDeEdad()) {
+                // Aumenta el contador de participantes mayores de edad
+                this.cntMayores18 ++;
             }
     }
     cantidadParticipantes(): number {
@@ -46,6 +53,13 @@ export default class Cl_mJuego {
         if (this.totalParticipantes === 0) return 0;
 
         return (this.cntMenos10 / this.totalParticipantes) * 100;
+    }
+
+    // Calcula el porcentaje de participantes mayores de 18 años
+    porcentMayores18(): number {
+        if (this.totalParticipantes === 0) return 0;
+
+        return (this.cntMayores18 / this.totalParticipantes) * 100;
     }
 }
 

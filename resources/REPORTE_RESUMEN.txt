@@ -1,0 +1,44 @@
+REPORTE RESUMIDO DEL PROYECTO L26.1.p.c3.Juegos-De-Cartas
+
+1. Objetivo
+-----------
+Adaptar el juego de cartas para incluir:
+- un nuevo atributo de participante: edad,
+- un cálculo porcentual adicional sobre mayores de 18 años.
+
+2. Modificaciones principales
+-----------------------------
+- `Cl_mParticipante.ts`: agregado `edad` y método `esMayorDeEdad()`.
+- `Cl_mJuego.ts`: agregado conteo y porcentaje de participantes mayores de 18 años.
+- `Cl_cJuego.ts`: carga inicial con edad y envío de `porcentMayores18` a la vista.
+- `Cl_cParticipante.ts`: captura la edad ingresada y la pasa al modelo.
+- `Cl_vJuegoPlain.ts`: muestra la columna Edad y el porcentaje de mayores de 18.
+- `Cl_vParticipantePlain.ts`: agrega campo de entrada Edad.
+- `index.html`: muestra el nuevo dato y el reporte en pantalla.
+- Se agregaron comentarios explicativos en los archivos modificados para documentar las nuevas funciones y atributos.
+
+3. Resultado esperado
+---------------------
+La aplicación ahora muestra:
+- nombre del participante,
+- cartas 1, 2 y 3,
+- edad,
+- puntuación total,
+- nombre del ganador,
+- porcentaje de jugadores con puntuación menor a 10,
+- porcentaje de jugadores mayores de 18 años.
+
+4. Validación
+--------------
+El código se compiló correctamente con `npx tsc` sin errores.
+
+Archivos modificados:
+- index.html
+- src/models/Cl_mParticipante.ts
+- src/models/Cl_mJuego.ts
+- src/controllers/Cl_cJuego.ts
+- src/controllers/Cl_cParticipante.ts
+- src/interfaces/I_vJuego.ts
+- src/interfaces/I_vParticipante.ts
+- src/views/Cl_vJuegoPlain.ts
+- src/views/Cl_vParticipantePlain.ts

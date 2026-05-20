@@ -5,6 +5,8 @@ export interface I_vParticipante {
     get carta1(): number; 
     get carta2(): number;
     get carta3(): number;
+    // Edad del participante capturada en la vista del formulario
+    get edad(): number;
 
     mostrar(): void;
     ocultar(): void;

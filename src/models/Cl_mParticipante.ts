@@ -4,15 +4,18 @@ export default class Cl_mParticipante{
     private _carta1 : number =0;
     private _carta2 : number =0;
     private _carta3 : number =0;
+    // Nuevo atributo para almacenar la edad del participante
+    private _edad : number = 0;
 
-    constructor({nombre, carta1,carta2,carta3}:
-        {nombre:string, carta1:number,carta2:number,carta3:number}=
-        {nombre: "", carta1: 0,carta2: 0,carta3: 0}){
+    constructor({nombre, carta1,carta2,carta3, edad}:
+        {nombre:string, carta1:number,carta2:number,carta3:number, edad:number}=
+        {nombre: "", carta1: 0,carta2: 0,carta3: 0, edad: 0}){
              
             this.nombre = nombre;
             this.carta1 = carta1;
             this.carta2 = carta2;
             this.carta3 = carta3;
+            this.edad = edad;
             
     }
 
@@ -50,7 +53,21 @@ export default class Cl_mParticipante{
         return this._carta3;
     }
 
+    set edad(e:number){
+        // Asegura que la edad sea un número no negativo
+        this._edad = Math.max(0, +e);
+    }
+
+    get edad(): number{
+        return this._edad;
+    }
+
     puntuacion():number{
         return this.carta1 + this.carta2 + this.carta3
+    }
+
+    // Devuelve true si el participante es mayor o igual a 18 años
+    esMayorDeEdad(): boolean {
+        return this.edad >= 18;
     }
 }

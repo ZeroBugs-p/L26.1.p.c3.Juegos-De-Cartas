@@ -9,13 +9,16 @@ export interface I_vJuego{
         cantidadParticipantes,
         ultimaPuntuacion,
         nombreMayor,
-        porcentMenos10
+        porcentMenos10,
+        porcentMayores18
     }:{
+        // porcentMayores18 es el porcentaje de participantes mayores de 18 años
         participante: Cl_mParticipante[],
         cantidadParticipantes: number,
         ultimaPuntuacion: number,
         nombreMayor: string, 
-        porcentMenos10: number
+        porcentMenos10: number,
+        porcentMayores18: number
     }): void;
 
 }

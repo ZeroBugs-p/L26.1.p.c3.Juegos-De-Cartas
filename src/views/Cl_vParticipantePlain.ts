@@ -10,6 +10,8 @@ export default class Cl_vParticipantePlain implements I_vParticipante {
     private btCancelar: HTMLButtonElement;
     private btAceptar: HTMLButtonElement;
     private vista: HTMLElement;
+    // Control para capturar la edad del participante
+    private inEdad: HTMLInputElement;
 
     constructor(){
 
@@ -17,6 +19,7 @@ export default class Cl_vParticipantePlain implements I_vParticipante {
         this.inCarta1 = document.getElementById("participante_inCarta1") as HTMLInputElement;
         this.inCarta2 = document.getElementById("participante_inCarta2") as HTMLInputElement;
         this.inCarta3 = document.getElementById("participante_inCarta3") as HTMLInputElement;
+        this.inEdad = document.getElementById("participante_inEdad") as HTMLInputElement;
         this.btAceptar = document.getElementById("participante_btAceptar") as HTMLButtonElement;
         this.btCancelar = document.getElementById("participante_btCancelar") as HTMLButtonElement;
         this.vista = document.getElementById("participante") as HTMLElement;
@@ -38,6 +41,11 @@ export default class Cl_vParticipantePlain implements I_vParticipante {
         return +this.inCarta3.value;
     }
 
+    // Devuelve la edad ingresada en el formulario del participante
+    get edad(): number{
+        return +this.inEdad.value;
+    }
+
     onAceptar(callback: ()=> void): void{
         this.btAceptar.onclick = callback;
     }
@@ -53,6 +61,7 @@ export default class Cl_vParticipantePlain implements I_vParticipante {
         this.inCarta1.value = "";
         this.inCarta2.value = "";
         this.inCarta3.value = "";
+        this.inEdad.value = "";
     }
 
     ocultar(): void{

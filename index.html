@@ -25,6 +25,8 @@
                 <th>Carta 1</th>
                 <th>Carta 2</th>
                 <th>Carta 3</th>
+                <!-- Nueva columna para mostrar la edad del participante -->
+                <th>Edad</th>
                 <th>Puntuación</th>
             </tr>
         </thead>
@@ -47,6 +49,11 @@
 
         <div>
             <strong>Porcentaje de Jugadores con menos de 10 puntos:</strong> <span id="body_lblPorcentMenos10">0</span>%
+        </div>
+
+        <!-- Campo agregado para mostrar el porcentaje de jugadores mayores de 18 años -->
+        <div>
+            <strong>Porcentaje de Jugadores mayores de 18 años:</strong> <span id="body_lblPorcentMayores18">0</span>%
         </div>
 
         <div><strong>Procesos Usados: Push, length y forEach </strong></div>
@@ -82,6 +89,13 @@
         <div>
             <label> Carta 3:
                 <input type="number" id="participante_inCarta3" placeholder="Ej: 7">
+            </label>
+        </div>
+
+        <!-- Campo agregado para capturar la edad del participante -->
+        <div>
+            <label> Edad:
+                <input type="number" id="participante_inEdad" placeholder="Ej: 20">
             </label>
         </div>
 

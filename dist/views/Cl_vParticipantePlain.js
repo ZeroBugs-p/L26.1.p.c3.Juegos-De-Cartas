@@ -7,11 +7,14 @@ export default class Cl_vParticipantePlain {
     btCancelar;
     btAceptar;
     vista;
+    // Control para capturar la edad del participante
+    inEdad;
     constructor() {
         this.inNombre = document.getElementById("participante_inNombre");
         this.inCarta1 = document.getElementById("participante_inCarta1");
         this.inCarta2 = document.getElementById("participante_inCarta2");
         this.inCarta3 = document.getElementById("participante_inCarta3");
+        this.inEdad = document.getElementById("participante_inEdad");
         this.btAceptar = document.getElementById("participante_btAceptar");
         this.btCancelar = document.getElementById("participante_btCancelar");
         this.vista = document.getElementById("participante");
@@ -28,6 +31,10 @@ export default class Cl_vParticipantePlain {
     get carta3() {
         return +this.inCarta3.value;
     }
+    // Devuelve la edad ingresada en el formulario del participante
+    get edad() {
+        return +this.inEdad.value;
+    }
     onAceptar(callback) {
         this.btAceptar.onclick = callback;
     }
@@ -42,6 +49,7 @@ export default class Cl_vParticipantePlain {
         this.inCarta1.value = "";
         this.inCarta2.value = "";
         this.inCarta3.value = "";
+        this.inEdad.value = "";
     }
     ocultar() {
         if (this.vista === null)

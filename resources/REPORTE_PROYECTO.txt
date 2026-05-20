@@ -1,0 +1,63 @@
+REPORTE DEL PROYECTO L26.1.p.c3.Juegos-De-Cartas
+
+1. Descripción general del proyecto
+-------------------------------
+Este proyecto es una aplicación de juego de cartas construida con TypeScript y una arquitectura MVC simple.
+
+Estructura principal:
+- index.html: página principal que carga los controladores y vistas desde la carpeta dist.
+- src/models: contiene los modelos de datos para Juego y Participante.
+- src/controllers: contiene los controladores que orquestan la lógica y la interacción entre modelo y vista.
+- src/views: contiene las vistas responsivas al DOM para mostrar participantes y capturar datos.
+- src/interfaces: define las interfaces de las vistas.
+
+Funcionalidad original:
+- Cada participante tiene tres cartas con valores numéricos.
+- Se calcula la puntuación como la suma de las tres cartas.
+- Se identifica el participante con la mayor puntuación.
+- Se calcula el porcentaje de jugadores con puntuación menor a 10.
+- Se muestran los participantes en una tabla y los resultados agregados.
+
+2. Modificaciones aplicadas
+-------------------------------
+Se introdujeron cambios para cumplir con un nuevo atributo y un cálculo adicional.
+
+Cambios realizados:
+- Se agregó el atributo "edad" en el modelo `Cl_mParticipante`.
+- Se agregó el método `esMayorDeEdad()` en `Cl_mParticipante` para evaluar si el participante tiene 18 o más años.
+- Se actualizó `Cl_mJuego` para contar participantes mayores de 18 y calcular `porcentMayores18()`.
+- Se actualizó `Cl_cJuego` para cargar datos de prueba con edad y enviar el nuevo porcentaje a la vista.
+- Se actualizó `Cl_cParticipante` para pasar la edad ingresada desde la vista al modelo.
+- Se actualizó `I_vParticipante` para exponer `get edad(): number`.
+- Se actualizó `I_vJuego` para aceptar el resultado `porcentMayores18`.
+- Se actualizó `Cl_vJuegoPlain` para mostrar la columna "Edad" en la tabla y el porcentaje de jugadores mayores de 18.
+- Se actualizó `Cl_vParticipantePlain` para agregar el campo de entrada "Edad".
+- Se actualizó `index.html` para mostrar la nueva columna en la tabla y el indicador de porcentaje de mayores de 18.
+- Se agregaron comentarios explicativos en los archivos modificados para documentar las nuevas funciones y atributos.
+
+3. Resultado
+-------------------------------
+La aplicación ahora maneja además el atributo de edad de cada participante, y muestra:
+- la edad de cada participante,
+- la puntuación total de cada participante,
+- el nombre del participante con el mayor puntaje,
+- el porcentaje de jugadores con puntuación menor a 10,
+- el porcentaje de jugadores mayores de 18 años.
+
+4. Validación
+-------------------------------
+Se compiló el proyecto con `npx tsc` y no se presentaron errores de compilación.
+
+5. Archivos modificados
+-------------------------------
+- index.html
+- src/models/Cl_mParticipante.ts
+- src/models/Cl_mJuego.ts
+- src/controllers/Cl_cJuego.ts
+- src/controllers/Cl_cParticipante.ts
+- src/interfaces/I_vJuego.ts
+- src/interfaces/I_vParticipante.ts
+- src/views/Cl_vJuegoPlain.ts
+- src/views/Cl_vParticipantePlain.ts
+
+Este reporte ha sido creado en la raíz del proyecto para entregar la descripción y el detalle de los cambios.

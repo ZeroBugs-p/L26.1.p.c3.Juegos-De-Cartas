@@ -3,12 +3,18 @@ export default class Cl_mJuego {
     participante = [];
     totalParticipantes = 0;
     cntMenos10 = 0;
+    // Contador de participantes mayores de 18 años
+    cntMayores18 = 0;
     agregarParticipante(participante) {
         this.participante.push(participante);
         this.totalParticipantes++;
         // Condición
         if (participante.puntuacion() < 10) {
             this.cntMenos10++;
+        }
+        if (participante.esMayorDeEdad()) {
+            // Aumenta el contador de participantes mayores de edad
+            this.cntMayores18++;
         }
     }
     cantidadParticipantes() {
@@ -36,6 +42,12 @@ export default class Cl_mJuego {
         if (this.totalParticipantes === 0)
             return 0;
         return (this.cntMenos10 / this.totalParticipantes) * 100;
+    }
+    // Calcula el porcentaje de participantes mayores de 18 años
+    porcentMayores18() {
+        if (this.totalParticipantes === 0)
+            return 0;
+        return (this.cntMayores18 / this.totalParticipantes) * 100;
     }
 }
 /*        JUEGO DE CARTAS
