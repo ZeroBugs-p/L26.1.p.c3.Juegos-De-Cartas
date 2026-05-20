@@ -16,6 +16,7 @@ export default class Cl_cJuego {
     this.cargarParticipantes();
 
     this.vJuego.onNewParticipante(() => this.procesar1Participante());
+
   }
 
   // Cargar Participantes de Datos de Prueba
