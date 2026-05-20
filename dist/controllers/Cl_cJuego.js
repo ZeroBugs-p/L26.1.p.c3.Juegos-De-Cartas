@@ -16,7 +16,8 @@ export default class Cl_cJuego {
         const participantes = [
             { nombre: "Juan", carta1: 1, carta2: 5, carta3: 2 },
             { nombre: "Jose", carta1: 12, carta2: 1, carta3: 1 },
-            { nombre: "Rosa", carta1: 10, carta2: 9, carta3: 8 }
+            { nombre: "Rosa", carta1: 10, carta2: 9, carta3: 8 },
+            { nombre: "Pedro", carta1: 12, carta2: 5, carta3: 3 }
         ];
         participantes.forEach((participantes) => {
             this.mJuego.agregarParticipante(new Cl_mParticipante({
