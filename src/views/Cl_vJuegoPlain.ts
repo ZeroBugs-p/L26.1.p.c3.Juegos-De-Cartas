@@ -72,10 +72,7 @@ export default class Cl_vJuegoPlain implements I_vJuego{
         this.lblCantidadParticipantes.innerHTML = cantidadParticipantes.toString();
         this.lblUltimaPuntuacion.innerHTML = ultimaPuntuacion.toFixed(2);
         // Actualiza el campo que muestra el porcentaje de mayores de 18 años
-        const lblPorcentMayores18 = document.getElementById("body_lblPorcentMayores18") as HTMLElement;
-        if (lblPorcentMayores18) {
-            lblPorcentMayores18.innerHTML = porcentMayores18.toFixed(2);
-        }
+        this.lblPorcentMayores18.innerHTML = porcentMayores18.toFixed(2);
         }
     
 }
