@@ -58,10 +58,11 @@ export default class Cl_vParticipantePlain implements I_vParticipante {
         if(this.vista === null) return;
         this.vista.hidden = false;
         this.inNombre.value = "";
+        this.inEdad.value = "";
         this.inCarta1.value = "";
         this.inCarta2.value = "";
         this.inCarta3.value = "";
-        this.inEdad.value = "";
+        
     }
 
     ocultar(): void{

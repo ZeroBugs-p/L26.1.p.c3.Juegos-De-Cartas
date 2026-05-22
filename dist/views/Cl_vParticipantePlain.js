@@ -46,10 +46,10 @@ export default class Cl_vParticipantePlain {
             return;
         this.vista.hidden = false;
         this.inNombre.value = "";
+        this.inEdad.value = "";
         this.inCarta1.value = "";
         this.inCarta2.value = "";
         this.inCarta3.value = "";
-        this.inEdad.value = "";
     }
     ocultar() {
         if (this.vista === null)

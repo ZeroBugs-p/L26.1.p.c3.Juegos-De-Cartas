@@ -22,11 +22,11 @@
             <tr> <!-- Fila -->
                 <th> <!-- Columna -->
                     Participante</th>
+                    <!-- Nueva columna para mostrar la edad del participante -->
+                <th>Edad</th>
                 <th>Carta 1</th>
                 <th>Carta 2</th>
                 <th>Carta 3</th>
-                <!-- Nueva columna para mostrar la edad del participante -->
-                <th>Edad</th>
                 <th>Puntuación</th>
             </tr>
         </thead>
@@ -61,6 +61,7 @@
         <hr>
 
         <button id="body_btNewParticipante"><strong>Procesar Participante</strong></button>
+        <button id="body_btBuscar"><strong>Buscar</strong></button>
         
     </section>
 
@@ -71,6 +72,13 @@
         <div>
             <label> Nombre del Participante:
                 <input type="text" id="participante_inNombre" placeholder="Ej: Krys"> 
+            </label>
+        </div>
+
+        <!-- Campo agregado para capturar la edad del participante -->
+        <div>
+            <label> Edad:
+                <input type="number" id="participante_inEdad" placeholder="Ej: 20">
             </label>
         </div>
 
@@ -92,18 +100,17 @@
             </label>
         </div>
 
-        <!-- Campo agregado para capturar la edad del participante -->
-        <div>
-            <label> Edad:
-                <input type="number" id="participante_inEdad" placeholder="Ej: 20">
-            </label>
-        </div>
+        
 
         <button id="participante_btCancelar"><strong>Cancelar</strong></button>
         <button id="participante_btAceptar"><strong>Aceptar</strong></button>
     
     </section>
-    
+
+    <section id="body" hidden style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; width: 350px;">
+        <h2 id="participante_lblParticipante">BUscar Participante</h2>
+    </section>
+
     <script type="module">
 
         // Importamos los Controladores
@@ -120,7 +127,14 @@
 
         // Inyectamos Las Vistas a los Controladores
             const controladorParticipante = new Cl_cParticipante(vistaParticipante);
-                new Cl_cJuego(vistaJuego, controladorParticipante);
+            const controladorJuego = new Cl_cJuego(vistaJuego, controladorParticipante);
+        
+            const btnBuscar = document.getElementById("body_btBuscar");
+            if(btnBuscar){
+                btnBuscar.onclick = () => {
+                    controladorJuego.buscarParticipante();
+                }
+            }
 
     </script>
 </body>

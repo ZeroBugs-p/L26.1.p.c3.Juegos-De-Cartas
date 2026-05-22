@@ -21,11 +21,11 @@ export default class Cl_cParticipante {
     btAceptarOnclick() {
         this.callback(new Cl_mParticipante({
             nombre: this.vista.nombre,
+            // Pasa al modelo la edad ingresada por el usuario
+            edad: this.vista.edad,
             carta1: this.vista.carta1,
             carta2: this.vista.carta2,
             carta3: this.vista.carta3,
-            // Pasa al modelo la edad ingresada por el usuario
-            edad: this.vista.edad,
         }));
         this.vista.ocultar();
     }

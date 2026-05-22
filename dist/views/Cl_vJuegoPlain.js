@@ -10,6 +10,7 @@ export default class Cl_vJuegoPlain {
     lblPorcentMenos10;
     lblPorcentMayores18;
     btNewParticipante;
+    btBuscar;
     tbParticipante;
     vista;
     constructor() {
@@ -19,6 +20,7 @@ export default class Cl_vJuegoPlain {
         this.lblPorcentMenos10 = document.getElementById("body_lblPorcentMenos10");
         this.lblPorcentMayores18 = document.getElementById("body_lblPorcentMayores18");
         this.btNewParticipante = document.getElementById("body_btNewParticipante");
+        this.btBuscar = document.getElementById("body_btBuscar");
         this.tbParticipante = document.getElementById("body_tbParticipante");
         this.vista = document.getElementById("body");
     }
@@ -32,10 +34,10 @@ export default class Cl_vJuegoPlain {
             // Agrega una fila por participante con su nombre, cartas, edad y puntuación
             tr.innerHTML = html `
                     <td> ${participante.nombre} </td>
+                    <td> ${participante.edad} </td>
                     <td> ${participante.carta1}</td>
                     <td> ${participante.carta2} </td>
                     <td> ${participante.carta3} </td>
-                    <td> ${participante.edad} </td>
                     <td> ${participante.puntuacion()} </td>
                 `;
             this.tbParticipante.appendChild(tr);

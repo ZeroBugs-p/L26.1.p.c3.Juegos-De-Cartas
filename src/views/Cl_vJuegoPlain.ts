@@ -14,6 +14,7 @@ export default class Cl_vJuegoPlain implements I_vJuego{
     private lblPorcentMenos10 : HTMLElement;
     private lblPorcentMayores18 : HTMLElement;
     private btNewParticipante: HTMLButtonElement;
+    private btBuscar: HTMLButtonElement;
     private tbParticipante: HTMLTableElement
     private vista : HTMLElement | null;
 
@@ -24,6 +25,7 @@ export default class Cl_vJuegoPlain implements I_vJuego{
         this.lblPorcentMenos10 = document.getElementById("body_lblPorcentMenos10") as HTMLElement;
         this.lblPorcentMayores18 = document.getElementById("body_lblPorcentMayores18") as HTMLElement;
         this.btNewParticipante = document.getElementById("body_btNewParticipante") as HTMLButtonElement;
+        this.btBuscar = document.getElementById("body_btBuscar") as HTMLButtonElement;
         this.tbParticipante = document.getElementById("body_tbParticipante") as HTMLTableElement;
         this.vista = document.getElementById("body") as HTMLElement;
 
@@ -58,10 +60,10 @@ export default class Cl_vJuegoPlain implements I_vJuego{
                 // Agrega una fila por participante con su nombre, cartas, edad y puntuación
                 tr.innerHTML = html`
                     <td> ${participante.nombre} </td>
+                    <td> ${participante.edad} </td>
                     <td> ${participante.carta1}</td>
                     <td> ${participante.carta2} </td>
                     <td> ${participante.carta3} </td>
-                    <td> ${participante.edad} </td>
                     <td> ${participante.puntuacion()} </td>
                 `;
 

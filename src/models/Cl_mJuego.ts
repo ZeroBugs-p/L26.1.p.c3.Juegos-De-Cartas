@@ -22,6 +22,15 @@ export default class Cl_mJuego {
                 // Aumenta el contador de participantes mayores de edad
                 this.cntMayores18 ++;
             }
+    
+    }
+    buscarPorNombre(nombre: string): Cl_mParticipante | null {
+        for(let z=0; z<this.participante.length; z++){
+            if(this.participante[z].nombre === nombre){
+                return this.participante[z];
+            }
+        }
+        return null;
     }
     cantidadParticipantes(): number {
         return this.participante.length;

@@ -17,6 +17,14 @@ export default class Cl_mJuego {
             this.cntMayores18++;
         }
     }
+    buscarPorNombre(nombre) {
+        for (let z = 0; z < this.participante.length; z++) {
+            if (this.participante[z].nombre === nombre) {
+                return this.participante[z];
+            }
+        }
+        return null;
+    }
     cantidadParticipantes() {
         return this.participante.length;
     }
